@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+
+    <!-- Load style sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="chat2.css">
+
+    <!-- Use mobile-aware viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load any supplemental Javascript libraries here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="chat.js"></script>
+
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="nav-item" id="btnBack">
+
+            <a class="nav-link" href="chat1.html" onmouseover="document.getElementById('backIcon').src='Graphics/blueBack.png';"
+                onmouseout="document.getElementById('backIcon').src='Graphics/whiteBack.png';">
+                <img src='Graphics/whiteBack.png' id="backIcon" class="icon" />
+                <!-- <img src="Graphics/whiteBack.png" id="backIcon"> -->
+                Back
+            </a>
+        </li>
+        <li class = "nav-item" id = "name">
+        </li>
+        <li class="nav-item" id="btnHome">
+            <a class="nav-link" href="#" onmouseover="document.getElementById('homeIcon').src='Graphics/blueHome.png';"
+                onmouseout="document.getElementById('homeIcon').src='Graphics/whiteHome.png';">
+                <img src="Graphics/whiteHome.png" id="homeIcon" class="icon" />
+                Home
+            </a>
+        </li>
+    </ul>
+    <div class="container">
+        <ul id="history">
+            
+        </ul>
+        <input type="text" class="form-control form-control-lg" placeholder="Type Your Message" id="messageBox">
+    </div> <!-- class="container" -->
+
+</body>
+<script>
+
+    var chat = [];
+    $(document).ready(function(){
+        var name = document.getElementById("name");
+        id = sessionStorage.getItem('name');
+        name.innerHTML = id;
+        var chat_hist = document.getElementById("history");
+        chat_m = JSON.parse(sessionStorage.getItem('chat_hist_mary'));
+        chat_b = JSON.parse(sessionStorage.getItem('chat_hist_bill'));
+        chat_grand = JSON.parse(sessionStorage.getItem('chat_hist_grand'));
+        if(chat_m == null){
+            chat_m = chat_hist_mary;
+            chat_b = chat_hist_bill;
+            chat_grand = chat_hist_grand;
+        }
+        sessionStorage.setItem('chat_hist_mary',JSON.stringify(chat_m));
+        sessionStorage.setItem('chat_hist_bill',JSON.stringify(chat_b));
+        sessionStorage.setItem('chat_hist_grand',JSON.stringify(chat_grand));
+        if(id == "Mary"){
+            chat = chat_m;
+        }
+        else if(id == "Bill"){
+            chat = chat_b;
+        }
+        else if(id == "GrandMaster"){
+            chat = chat_grand;
+        }
+        for(var i = 0;i<chat.length;i++){
+            var message = document.createElement("li");
+            if(chat[i][1]=="me"){
+                message.setAttribute("class", "me");
+                message.innerHTML = chat[i][0];
+            }
+            else{
+                var message = document.createElement("div");
+                message.setAttribute("class", "row");
+                message.innerHTML = "<img src = 'Graphics/user.png' class='icon2'/><li class='him'>"+chat[i][0]+"</li>";
+            }
+            chat_hist.appendChild(message);
+        }
+        chat_hist.scrollTop = chat_hist.scrollHeight;
+    })
+    $(document).on('keyup', function(evt) 
+      {
+        var input = document.getElementById("messageBox").value;
+        if(input.length > 0 && evt.keyCode == 13){
+            var message = document.createElement("li");
+            message.setAttribute("class", "me");
+            message.innerHTML = input;
+            var id = document.getElementById('name').innerHTML ;
+            var new_info = [];
+            chat.push([input,"me"]);
+            contact = JSON.parse(sessionStorage.getItem('contacts'));
+            if(id == "Mary"){
+                sessionStorage.setItem('chat_hist_mary',JSON.stringify(chat));
+                new_info = contact.Mary;
+            }
+            else if(id == "Bill"){
+                sessionStorage.setItem('chat_hist_bill',JSON.stringify(chat));
+                new_info = contact.Bill;
+            }
+            else if(id == "GrandMaster"){
+                sessionStorage.setItem('chat_hist_grand',JSON.stringify(chat));
+                new_info = contact.GrandMaster;
+            }
+            var curr_time = new Date();
+            new_info[2] = (curr_time.getMonth()+1)+"/"+curr_time.getDate()+'/'+curr_time.getFullYear()+' '+curr_time.getHours()+':'+curr_time.getMinutes();
+            new_info[3] = input;
+            new_contacts = {};
+            new_contacts[new_info[0]] = new_info;
+            for(key in contact){
+                if(!(key in new_contacts)){
+                    new_contacts[key] = contact[key];
+                }
+            }
+            sessionStorage.setItem('contacts',JSON.stringify(new_contacts));            
+            var chat_hist = document.getElementById("history");
+            chat_hist.appendChild(message);
+            chat_hist.scrollTop = chat_hist.scrollHeight;
+            document.getElementById("messageBox").value = '';
+        }
+        
+      });
+    document.getElementById("btnBack").addEventListener("click", function(){
+        window.location.href = "chat1.html"
+    });
+    document.getElementById("btnHome").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+    });
+
+</script>
+
+</html>

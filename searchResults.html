@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TBD</title>
+    <!-- Load style sheets -->
+   <!--  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="searchResultsStyle.css">
+  
+    
+    <!-- Load any supplemental Javascript libraries here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+    
+
+  </head>
+  <body >
+
+    <ul class="nav">
+      <li class="nav-item" id="btnBack">
+
+        <a class="nav-link" href="#" 
+        onmouseover="document.getElementById('backIcon').src='Graphics/blueBack.png';" 
+        onmouseout="document.getElementById('backIcon').src='Graphics/whiteBack.png';">
+          <img src='Graphics/whiteBack.png' id="backIcon" class="icon" />
+          <!-- <img src="Graphics/whiteBack.png" id="backIcon"> -->
+          Back
+        </a>
+      </li>
+      <li class="nav-item" id="btnHome">
+        <a class="nav-link" href="#" 
+        onmouseover="document.getElementById('homeIcon').src='Graphics/blueHome.png';" 
+        onmouseout="document.getElementById('homeIcon').src='Graphics/whiteHome.png';">
+          <img src="Graphics/whiteHome.png" id="homeIcon" class="icon"/>
+          Home
+        </a>
+      </li>
+    </ul>
+    <div class="container d-flex flex-column">
+
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <div class="alert alert-success">
+            <strong>Success!</strong> Indicates a successful or positive action.
+          </div> -->
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="prependSearch">
+                <img src='Graphics/search.png' height="25"/>
+              </span>
+            </div>
+            <input type="text" class="form-control form-control-lg" placeholder="Search" id="searchBar">
+          </div>
+
+          <h1 style="color:white; text-align: center;">Search Results</h1>
+          <div class="tableWrapper">
+            <table class="table table-hover table-dark" id="usersFound">
+              <!-- <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Name</th>
+                  <th scope="col" style="text-align: center;">Select</th>
+                </tr>
+              </thead> -->
+              <tbody>
+                <!-- <tr>
+                  <th scope="row" class="align-middle" style="text-align: center; width: 16.66%">
+                    <img src="Graphics/chess.png" class="icon2"/>
+                  </th>
+                  <td class="align-middle">Kon<br>Chess</td>
+                  <td class="align-middle" style="text-align: center; width: 16.66%">
+                      <input type="checkbox" aria-label="Checkbox for following text input" id="box">
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row flex-grow-1 " id="btnRow">
+          <button type="button" class="btn btn-light" id="btnAdd" disabled>Add Contacts</button>
+      </div> -->
+      <!-- Button trigger modal -->
+      <div class="row flex-grow-1 " id="btnRow">
+          <button type="button" class="btn btn-light" id="btnAdd" disabled data-toggle="modal" data-target="#staticBackdrop">Add Contacts</button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered  modal-sm">
+          <div class="modal-content">
+            <div class="modal-header" >
+              <h5 class="modal-title" id="staticBackdropLabel" style="font-size: 25px;">Request Sent</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+            </div>
+            <div class="modal-body" style="text-align: center; font-size: 20px;">
+              Press Button to Return Home
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+              <button type="button" class="btn btn-secondary" id="btnExit">Home</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div> <!-- class="container" -->
+
+    
+  </body>
+  <script>
+    var checkCount = 0;
+    function addTableRows(person){
+
+      for(var i = 0; i < person.length; ++i){
+        var table = document.getElementById("usersFound");
+        var row_num = table.rows.length;
+
+        var row = table.insertRow(row_num);
+        var name = person[i][0];
+        var hobby = person[i][1];
+        var picLoc = person[i][2];
+        row.innerHTML = "<th scope='row' class='align-middle' style='text-align: center; width: 16.66%'><img src='" + picLoc + "' class='icon2'/></th><td class='align-middle'>" + name +"<br>" + hobby + "</td><td class='align-middle' style='text-align: center; width: 16.66%'><input type='checkbox' aria-label='Checkbox for following text input' class='box' id='box" + i + "'></td>";
+
+        document.getElementById("box" + i).addEventListener("change", function(){
+          if(this.checked) {
+              // Checkbox is checked..
+              ++checkCount;
+              document.getElementById("btnAdd").disabled = false;
+          } else {
+              // Checkbox is not checked..
+              --checkCount;
+              if(checkCount == 0){
+                document.getElementById("btnAdd").disabled = true;
+              }
+          }
+        });
+
+        // for (var j = 0; j < col_num; j++) {
+        //   var cell = row.insertCell(j);
+
+        //   cell.innerHTML = "cell()";
+        // }
+      }
+    }
+    //Event Handlers
+    
+    $(document).ready(function()
+    {
+      var profiles = [["Kon", "#chess #competitive", "Graphics/user.png"], 
+                      ["Jake", "#chess #fun", "Graphics/user.png"], 
+                      ["Thomas", "#chess #competive", "Graphics/user.png"], 
+                      ["Jimmy", "#chess #fun", "Graphics/user.png"], 
+                      ["R to D2", "#chess #casual", "Graphics/group.png"], 
+                      ["Chess Mates", "#chess #blitz", "Graphics/group.png"]];
+      //alert(sessionStorage.getItem("searchTerm"))
+      document.getElementById("searchBar").value = sessionStorage.getItem("searchTerm");
+      if(sessionStorage.getItem("searchTerm").toLowerCase() == "chess"){
+        addTableRows(profiles);
+      }
+      else{
+        var table = document.getElementById("usersFound");
+        var row_num = table.rows.length;
+
+        table.innerHTML = "<h>No matches</h>"
+      }
+      
+
+    });
+
+    document.getElementById("btnBack").addEventListener("click", function(){
+        window.location.href = "searchMain.html" 
+    });
+    document.getElementById("btnHome").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+    });
+    document.getElementById("btnExit").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+    });
+
+    $(document).on('keyup', function(evt) 
+      {
+        var curKey = evt.which;
+        var input = document.getElementById("searchBar").value;
+        if(input.length > 0 && curKey == 13){
+          if(input.toLowerCase() == "chess"){
+            sessionStorage.setItem("searchTerm", input);
+            window.location.href = "searchResults.html";
+          }
+          else if(input != "chess")
+          {
+            sessionStorage.setItem("searchTerm", input);
+            window.location.href = "searchResults.html";
+          }
+        }
+        
+      });
+    // document.getElementById("btnAdd").addEventListener("click", function(){
+    //   document.getElementById("btnAdd").disabled = true;
+    // });
+      
+
+
+  </script>
+</html>

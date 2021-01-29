@@ -1,0 +1,79 @@
+.container{
+	
+	height: 700px;
+	width: 482px;
+	background-color: dimgray;
+	display: flex;
+}
+.nav{
+	background-color: black;
+	width: 482px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+  	justify-content: space-between;	
+}
+.nav-link{
+	color: white;
+}
+.nav-link:hover.backIcon{
+	
+}
+#backIcon{
+	height: 30px;
+	width: 30px;
+}
+#homeIcon{
+	height: 30px;
+	width: 30px;
+}
+
+#firstColumn{
+	outline: 1px dashed yellow;
+}
+table, th, td {
+	border: 3px solid white;
+	min-width: 241px;
+	min-height: 700px;
+}
+
+.btn.btn-light{
+	font-size: 30px;
+	display: inline-block;
+	border-radius: 50%;
+	border: dimgray;
+	height: 120px;
+	width: 120px;
+}
+.icon2{
+	max-height: 80px;
+	max-width: 80px;
+	border-radius: 4px;
+}
+.btn:hover{
+	background-color: darkorange;
+}
+.row{
+	justify-content: center;
+}
+/*#text{*/
+/*	font-weight: bold;*/
+/*}*/
+.text-center{
+	font-weight: bold;
+	font-size: x-large;
+	/*TODO: Add bg to text if need be*/
+	/*background: darkorange;*/
+}
+/*.chat1{*/
+/*	background-color: transparent;*/
+/*	!*font-size: 19px;*!*/
+/*	!*height: auto;*!*/
+/*	!*left: 342px;*!*/
+/*	!*line-height: 19px;*!*/
+/*	!*position: absolute;*!*/
+/*	!*text-align: left;*!*/
+/*	!*top: 196px;*!*/
+/*	!*white-space: nowrap;*!*/
+/*	!*width: auto;*!*/
+/*}*/

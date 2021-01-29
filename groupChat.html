@@ -1,0 +1,111 @@
+<!--  
+  groupChat.html
+
+  The page after clicking 'Proceed to Group Chat' button on the join group page.
+  User is encouraged to send a welcome message to members just added to the group.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+
+    <!-- Load style sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="chat2.css">
+
+    <!-- Use mobile-aware viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load supplemental Javascript libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="chat.js"></script>
+
+</head>
+
+<body>
+
+    <!-- The top navigation app bar -->
+    <ul class="nav">
+        <!-- Back button -->
+        <li class="nav-item" id="btnBack">
+            <a class="nav-link" href="chat1.html" onmouseover="document.getElementById('backIcon').src='Graphics/blueBack.png';"
+                onmouseout="document.getElementById('backIcon').src='Graphics/whiteBack.png';">
+                <img src='Graphics/whiteBack.png' id="backIcon" class="icon" />
+                <!-- <img src="Graphics/whiteBack.png" id="backIcon"> -->
+                Back
+            </a>
+        </li>
+        <li class = "nav-item" id = "name"> SIG-Chess
+        </li>
+        <!-- Home button -->
+        <li class="nav-item" id="btnHome">
+            <a class="nav-link" href="#" onmouseover="document.getElementById('homeIcon').src='Graphics/blueHome.png';"
+                onmouseout="document.getElementById('homeIcon').src='Graphics/whiteHome.png';">
+                <img src="Graphics/whiteHome.png" id="homeIcon" class="icon" />
+                Home
+            </a>
+        </li>
+    </ul>
+
+    
+    <div class="container">
+        <ul id="history">
+            <i id="WelcomeMessage" style="color:white; text-align: center; font-size: 20px; padding-left: 20px">Welcome to your new group, send a message!</i>
+        </ul>
+        <input type="text" class="form-control form-control-lg" placeholder="Type Your Message" id="messageBox">
+    </div> <!-- class="container" -->
+
+</body>
+
+<!-- Script handles the messaging and chat features of the page -->
+<script>
+
+    // Check the message that is sent
+    $(document).ready(function(){
+        var name = document.getElementById("name");
+        id = sessionStorage.getItem('name');
+        var chat_hist = document.getElementById("history");
+        var chat = [];
+        
+        for(var i = 0;i<chat.length;i++){
+            var message = document.createElement("li");
+            if(chat[i][1]=="me"){
+                message.setAttribute("class", "me");
+                message.innerHTML = chat[i][0];
+            }
+            else{
+                var message = document.createElement("div");
+                message.setAttribute("class", "row");
+                message.innerHTML = "<img src = 'Graphics/user.png' class='icon2'/><li class='him'>"+chat[i][0]+"</li>";
+            }
+            chat_hist.appendChild(message);
+        }
+        chat_hist.scrollTop = chat_hist.scrollHeight;
+    })
+
+    // Update the chat screen after sending latest message 
+    $(document).on('keyup', function(evt) 
+      {
+        var input = document.getElementById("messageBox").value;
+        if(input.length > 0 && evt.keyCode == 13){
+            var message = document.createElement("li");
+            message.setAttribute("class", "me");
+            message.innerHTML = input;
+            var chat_hist = document.getElementById("history");
+            chat_hist.appendChild(message);
+            chat_hist.scrollTop = chat_hist.scrollHeight;
+            document.getElementById("messageBox").value = '';
+            document.getElementById("WelcomeMessage").innerHTML = "";
+        }
+      });
+
+    document.getElementById("btnHome").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,126 @@
+<!--  
+  createGroupName.html
+
+  The page after clicking 'Create Group' button on the home page.
+  Set the group name first, then the privacy setting for the new group on this page.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title>CreateGroupName</title>
+
+    <!-- Load style sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="createGroupName.css">
+    
+    <!-- Load supplemental Javascript libraries -->
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  </head>
+
+  <body >
+
+    <!-- The top navigation app bar -->
+    <ul class="nav">
+      <!-- Back button -->
+      <li class="nav-item" id="btnBack">
+        <a class="nav-link" href="#" 
+        onmouseover="document.getElementById('backIcon').src='Graphics/blueBack.png';" 
+        onmouseout="document.getElementById('backIcon').src='Graphics/whiteBack.png';">
+          <img src='Graphics/whiteBack.png' id="backIcon"/>
+          Back
+        </a>
+      </li>
+      <!-- Home button -->
+      <li class="nav-item" id="btnHome">
+        <a class="nav-link" href="#" 
+        onmouseover="document.getElementById('homeIcon').src='Graphics/blueHome.png';" 
+        onmouseout="document.getElementById('homeIcon').src='Graphics/whiteHome.png';">
+          <img src="Graphics/whiteHome.png" id="homeIcon">
+          Home
+        </a>
+      </li>
+    </ul>
+
+    <!-- Enter Group Name text field -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" id="firstColumn">
+          
+              <p id="groupName" style="color:white; text-align: center; font-size:50px;">Group Name: </p>
+              <input type="text" class="form-control form-control-lg" placeholder="Enter Your Group Name..." maxlength="16" id="groupNameBox">
+              <script>
+                  // Code from a tutorialrepublic.com jQuery keypress event tutorial 
+                $(document).on("keypress", "input", function(e){
+                    if(e.which == 13){
+                        var groupNameInput = $(this).val();
+                        document.getElementById("groupName").innerHTML = groupNameInput.bold();
+                        document.getElementById("publicBtn").disabled = false;
+                        document.getElementById("privateBtn").disabled = false;
+                        document.getElementById("btnPublic").style.opacity = 1.0;
+                        document.getElementById("btnPrivate").style.opacity = 1.0;
+                        document.getElementById("privacy").style.opacity = 1.0;
+                    }
+                });
+            </script>
+        </div> 
+      </div> <!-- class="row" -->
+
+      <!-- Select privacy label -->
+      <div class="row">
+        <div class="col-md-12" id="privacy">
+            <i id="whoCanJoin" style="color:white; text-align: center; font-size:35px">Select who can join: </i>
+        </div>     
+    </div> <!-- class="row" -->
+
+      <div class="row">
+
+        <!-- Public Column -->
+        <div class="col-md-6" id="btnPublic" >
+            <button type="button" class="btn btn-light btn-lg btn-block" disabled=true id="publicBtn">
+                <img src="Graphics/public.png" class="icon"/>
+                <br>
+                <b style="color:#4d4d4d; text-align: center; font-size:50px;">Public </b>
+            </button>
+
+            <i style="color:white; text-align: center; font-size:25px;">Anyone can join this group</i>
+        </div>
+          
+        <!-- Private Column -->
+        <div class="col-md-6" id="btnPrivate">
+          <button type="button" class="btn btn-light btn-lg btn-block" disabled=true id="privateBtn">
+            <img src="Graphics/private.png" class="icon" />
+            <br>
+            <b style="color:#4d4d4d; text-align: center; font-size:50px;">Private </b>
+          </button>
+
+          <i style="color:white; text-align: center; font-size:25px;">Only people you invite can join this group</i>
+        </div>
+
+      </div> <!-- class="row" -->
+    </div> <!-- class="container" -->
+
+  </body>
+
+  <!-- Event handlers for all clickable buttons -->
+  <script>
+      
+      document.getElementById("privateBtn").addEventListener("click", function(){
+        window.location.href = "joinGroup.html"
+      });
+      document.getElementById("publicBtn").addEventListener("click", function(){
+        window.location.href = "joinGroup.html"
+      });
+      document.getElementById("btnBack").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+      });
+      document.getElementById("btnHome").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+      });
+
+  </script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TBD</title>
+    <!-- Load style sheets -->
+   <!--  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="MAINStyle.css">
+
+
+    <!-- Load any supplemental Javascript libraries here -->
+<!--    <script src=-->
+<!--    "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  </head>
+  <body >
+    <div class="container">
+      <div class="row">
+        <table class="center">
+          <tr>
+            <td style="text-align: center">
+              <button type="button" class="btn btn-light" id="call">
+                <img src="Graphics/phone-call.png" class="icon2" />
+              </button>
+              <div class="text-center">CALL</div>
+            </td>
+            <td style="text-align: center">
+              <button type="button" class="btn btn-light" id="chat">
+                <img src="Graphics/chat.png" class="icon2" />
+              </button>
+              <div id="text" class="text-center">CHAT</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">
+              <button type="button" class="btn btn-light" id="find">
+                <img src="Graphics/find.png" class="icon2" />
+              </button>
+              <div class="text-center">FIND</div>
+            </td>
+            <td style="text-align: center">
+              <button type="button" class="btn btn-light" id="createGroup">
+                <img src="Graphics/create-group.png" class="icon2" />
+              </button>
+              <div class="text-center">CREATE GROUP</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: center">
+              <button type="button" class="btn btn-light" id="help" >
+                <img src="Graphics/information.png" class="icon2" />
+              </button>
+              <div class="text-center">HELP</div>
+            </td>
+            <td style="text-align: center">
+              <button type="button" class="btn btn-light" id="profile" >
+                <img src="Graphics/profile.png" class="icon2" />
+              </button>
+              <div class="text-center">PROFILE</div>
+            </td>
+          </tr>
+        </table>
+      </div> <!-- class="row" -->
+    </div> <!-- class="container" -->
+  </body>
+  <script>
+      
+      document.getElementById("chat").addEventListener("click", function(){
+        window.location.href = "chat1.html"
+      });
+      document.getElementById("find").addEventListener("click", function(){
+        window.location.href = "searchMain.html"
+      });
+      document.getElementById("createGroup").addEventListener("click", function(){
+        window.location.href = "createGroupName.html"
+        //Event Handlers
+        // document.getElementById("call").addEventListener("click", function(){
+        //   window.location.href = "searchResults.html"
+        // });
+      });
+      // document.getElementById("help").addEventListener("click", function(){
+      //   //window.location.href = "searchResults.html"
+      // });
+      // document.getElementById("profile").addEventListener("click", function(){
+      //   window.location.href = "searchResults.html"
+      // });
+  </script>
+</html>

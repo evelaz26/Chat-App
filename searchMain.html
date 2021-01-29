@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TBD</title>
+    <!-- Load style sheets -->
+   <!--  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="searchMainStyle.css">
+  
+    
+    <!-- Load any supplemental Javascript libraries here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+
+    
+
+  </head>
+  <body >
+
+    <ul class="nav">
+      <li class="nav-item" id="btnBack">
+
+        <a class="nav-link" href="#" 
+        onmouseover="document.getElementById('backIcon').src='Graphics/blueBack.png';" 
+        onmouseout="document.getElementById('backIcon').src='Graphics/whiteBack.png';">
+          <img src='Graphics/whiteBack.png' id="backIcon" class="icon" />
+          <!-- <img src="Graphics/whiteBack.png" id="backIcon"> -->
+          Back
+        </a>
+      </li>
+      <li class="nav-item" id="btnHome">
+        <a class="nav-link" href="#" 
+        onmouseover="document.getElementById('homeIcon').src='Graphics/blueHome.png';" 
+        onmouseout="document.getElementById('homeIcon').src='Graphics/whiteHome.png';">
+          <img src="Graphics/whiteHome.png" id="homeIcon" class="icon"/>
+          Home
+        </a>
+      </li>
+    </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="prependSearch">
+                <img src='Graphics/search.png' height="25"/>
+              </span>
+            </div>
+            <input type="text" class="form-control form-control-lg" placeholder="Search" id="searchBar">
+          </div>
+          <h1 style="color:white; text-align: center;">Recent Searches</h1>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6"  >
+          
+          <!-- Column 1 Code Here -->
+          <button type="button" class="btn btn-light btn-lg btn-block" id="btnFlower">
+            <img src="Graphics/flower.png" class="icon2"/>
+            <br>
+            Gardening
+          </button>
+          <button type="button" class="btn btn-light btn-lg btn-block" id="btnCook">
+            <img src="Graphics/cook.png" class="icon2" />
+            <br>
+            Cooking
+          </button>
+          <button type="button" class="btn btn-light btn-lg btn-block" id="btnChess">
+            <img src="Graphics/chess.png" class="icon2" />
+            <br>
+            Chess
+          </button>
+        </div>
+
+        <div class="col-md-6">
+          <button type="button" class="btn btn-light btn-lg btn-block" id="btnFish">
+            <img src="Graphics/fish.png" class="icon2" />
+            <br>
+            Fishing
+          </button>
+          <button type="button" class="btn btn-light btn-lg btn-block" id="btnArt">
+            <img src="Graphics/art.png" class="icon2" />
+            <br>
+            Drawing
+          </button>
+          <button type="button" class="btn btn-light btn-lg btn-block" id="btnBall">
+            <img src="Graphics/basketball.png" class="icon2" />
+            <br>
+            Basketball
+          </button>
+
+          
+        </div>
+
+      </div> <!-- class="row" -->
+    </div> <!-- class="container" -->
+  </body>
+  <script>
+      //Event Handlers
+     
+      document.getElementById("btnFlower").addEventListener("click", function(){
+        sessionStorage.setItem("searchTerm", "Gardening");
+        window.location.href = "searchResults.html" 
+      });
+      document.getElementById("btnCook").addEventListener("click", function(){
+        sessionStorage.setItem("searchTerm", "Cooking");
+        window.location.href = "searchResults.html" 
+      });
+      document.getElementById("btnChess").addEventListener("click", function(){
+        sessionStorage.setItem("searchTerm", "Chess");
+        window.location.href = "searchResults.html" 
+      });
+      document.getElementById("btnFish").addEventListener("click", function(){
+        sessionStorage.setItem("searchTerm", "Fishing");
+        window.location.href = "searchResults.html" 
+      });
+      document.getElementById("btnArt").addEventListener("click", function(){
+        sessionStorage.setItem("searchTerm", "Drawing");
+        window.location.href = "searchResults.html" 
+      });
+      document.getElementById("btnBall").addEventListener("click", function(){
+        sessionStorage.setItem("searchTerm", "Basketball");
+        window.location.href = "searchResults.html" 
+      });
+      document.getElementById("btnBack").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+      });
+      document.getElementById("btnHome").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+      });
+
+
+      $(document).on('keyup', function(evt) 
+      {
+        var curKey = evt.which;
+        var input = document.getElementById("searchBar").value;
+        if(input.length > 0 && curKey == 13){
+          if(input.toLowerCase() == "chess"){
+            sessionStorage.setItem("searchTerm", input);
+            window.location.href = "searchResults.html";
+          }
+          else if(input != "chess")
+          {
+            sessionStorage.setItem("searchTerm", input);
+            window.location.href = "searchResults.html";
+          }
+        }
+        
+      });
+
+
+  </script>
+</html>

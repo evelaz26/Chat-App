@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+
+    <!-- Load style sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="chat1.css">
+
+    <!-- Use mobile-aware viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load any supplemental Javascript libraries here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="chat.js"></script>
+
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="nav-item" id="btnBack">
+
+            <a class="nav-link" href="#" onmouseover="document.getElementById('backIcon').src='Graphics/blueBack.png';"
+                onmouseout="document.getElementById('backIcon').src='Graphics/whiteBack.png';">
+                <img src='Graphics/whiteBack.png' id="backIcon" class="icon" />
+                <!-- <img src="Graphics/whiteBack.png" id="backIcon"> -->
+                Back
+            </a>
+        </li>
+        <li class="nav-item" id="btnHome">
+            <a class="nav-link" href="#" onmouseover="document.getElementById('homeIcon').src='Graphics/blueHome.png';"
+                onmouseout="document.getElementById('homeIcon').src='Graphics/whiteHome.png';">
+                <img src="Graphics/whiteHome.png" id="homeIcon" class="icon" />
+                Home
+            </a>
+        </li>
+    </ul>
+    <div class="container">
+        <div class="row" id="search">
+            <div class="col-md-12">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="prependSearch">
+                            <img src='Graphics/search.png' height="25" />
+                        </span>
+                    </div>
+                    <input type="text" class="form-control form-control-lg" placeholder="Search" id="searchBar">
+                </div>
+                <div class="tableWrapper" id ="table">
+                    <table class="table table-hover table-dark" id="contacts">
+                        <tbody>
+                      </tbody>
+                    </table>
+                </div>
+            </div> <!-- class="container" -->
+        </div>
+    </div>
+</body>
+<script>
+    function build_table(contacts){
+        var table = document.getElementById("contacts");
+        table.innerHTML = "<tbody></tbody>"
+        for (var key in contacts) {
+            var row_num = table.rows.length;
+            var row = table.insertRow(row_num);
+            var name = contacts[key][0];
+            var pic = contacts[key][1];
+            var time = contacts[key][2];
+            var message = contacts[key][3];
+            row.innerHTML = "<th scope='row' class='align-middle' style='text-align: center; width: 16.66%'><img src=" + pic + " class='icon2'/></th><td class='align-middle'><div class='name'>" + name + "</div><div class='message'>" + message + "</div></td><td class='align-middle' style='text-align: center; width: 16.66%' ><div class='time'>" + time + "</div></td></tr>";
+            row.setAttribute("id", name);
+            document.getElementById(name).addEventListener("click", function(){
+                sessionStorage.setItem('name', this.id)
+                window.location.href = "chat2.html" 
+            })
+        }
+    }
+    $(document).ready(function () {
+        c = JSON.parse(sessionStorage.getItem('contacts'));
+        if(c==null){
+            c = contacts;
+        }
+        build_table(c);
+        sessionStorage.setItem('contacts',JSON.stringify(c));
+    })
+    $(document).on('keyup', function(evt) 
+      {
+        var input = document.getElementById("searchBar").value;
+        c = JSON.parse(sessionStorage.getItem('contacts'));
+        if(input.length > 0 && evt.keyCode == 13){
+            var found = false;
+            for(var key in c){
+                if(c[key][0].toLowerCase() == input.toLowerCase()){
+                    document.getElementById("contacts").innerHTML = "<tbody><th scope='row' class='align-middle' style='text-align: center; width: 16.66%'><img src=" + c[key][1] + " class='icon2'/></th><td class='align-middle'><div class='name'>" + c[key][0] + "</div><div class='message'>" + c[key][3] + "</div></td><td class='align-middle' style='text-align: center; width: 16.66%' ><div class='time'>" + c[key][2] + "</div></td></tr></tbody>"
+                    found = true;
+                }
+            }
+          
+            if(!found){
+                document.getElementById("table").innerHTML = "<div id='no_result'>No Search Result</div>";
+            }
+        }
+        else if(input.length == 0 && evt.keyCode == 13){
+            build_table(c);
+        }
+        
+      });
+    document.getElementById("btnBack").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+    });
+    document.getElementById("btnHome").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+    });
+    
+</script>
+
+</html>

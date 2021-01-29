@@ -1,0 +1,48 @@
+.container{
+	
+	height: 700px;
+	width: 482px;
+	background-color: dimgray;
+}
+.nav{
+	background-color: black;
+	width: 482px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+  	justify-content: space-between;	
+}
+.nav-link{
+	color: white;
+}
+.nav-link:hover.backIcon{
+	
+}
+.icon{
+	height: 30px;
+	width: 30px;
+}
+.icon2{
+	height: 50px;
+	width: 50px;
+}
+
+.row{
+	padding: 15px;
+}
+#prependSearch{
+	background-color: white;
+}
+
+.btn.btn-light.btn-lg.btn-block{
+	/*height: 150px;*/
+	padding: 25px;
+	font-size: 30px;
+}
+.col-md-6{
+	height: 500px;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

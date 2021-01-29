@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Join Group</title>
+    <!-- Load style sheets -->
+   <!--  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="joinGroup.css">
+  
+    
+    <!-- Load any supplemental Javascript libraries here -->
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+
+    
+
+  </head>
+  <body >
+
+    <ul class="nav">
+      <li class="nav-item" id="btnBack">
+
+        <a class="nav-link" href="#" 
+        onmouseover="document.getElementById('backIcon').src='Graphics/blueBack.png';" 
+        onmouseout="document.getElementById('backIcon').src='Graphics/whiteBack.png';">
+          <img src='Graphics/whiteBack.png' id="backIcon"/>
+          <!-- <img src="Graphics/whiteBack.png" id="backIcon"> -->
+          Back
+        </a>
+      </li>
+      <li class="nav-item" id="btnHome">
+        <a class="nav-link" href="#" 
+        onmouseover="document.getElementById('homeIcon').src='Graphics/blueHome.png';" 
+        onmouseout="document.getElementById('homeIcon').src='Graphics/whiteHome.png';">
+          <img src="Graphics/whiteHome.png" id="homeIcon">
+          Home
+        </a>
+      </li>
+    </ul>
+    <div class="container">
+      <div class="row">
+
+        <div class="create-group-1">
+          <!-- <div class="overlap-group1-C61RwL">
+            <div class="rectangle-35 border-class-1"></div>
+            <h1 class="search-in-contacts font-class-1">SEARCH IN CONTACTS</h1>
+            <img
+              class="icon-awesome-search"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/icon-awesome-search@1x.png"
+            />
+          </div> -->
+          <div class="input-group mb-3" id = "searchBar-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="prependSearch">
+                <img src='Graphics/search.png' height="25"/>
+              </span>
+            </div>
+            <input type="text" class="form-control form-control-lg" placeholder="Search" id="searchBar">
+          </div>
+          <div class="overlap-group2-C61RwL">
+            <img
+              class="path-29"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/path-29@1x.png"
+            />
+            <div class="participants font-class-1">Participants</div>
+            <div class="add-to font-class-1">ADD TO</div>
+            <div class="group font-class-1">GROUP</div>
+            <img
+              class="line-3"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/line-3@1x.png"
+            />
+          </div>
+          <div class="overlap-group3-C61RwL">
+            <div class="rectangle-40 border-class-1"></div>
+            <div class="rectangle-41 border-class-1"></div>
+            <div class="rectangle-42 border-class-1"></div>
+            <div class="rectangle-43 border-class-1"></div>
+            <div class="rectangle-44 border-class-1"></div>
+            <div class="component-3-6">
+              <input type="checkbox" class = "checkbox-1">
+            </div>
+            <div class="component-3-7">
+              <input type="checkbox" class = "checkbox-1">
+            </div>
+            <div class="component-3-8">
+              <input type="checkbox" class = "checkbox-1">
+            </div>
+            <div class="component-3-9">
+              <input type="checkbox" class = "checkbox-1">
+            </div>
+            <img
+              class="icon-aweso-ser-circle-eSNWXa"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/icon-awesome-user-circle-3@1x.png"
+            />
+            <img
+              class="icon-aweso-ser-circle-OEJu1x"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/icon-awesome-user-circle-3@1x.png"
+            />
+            <img
+              class="icon-aweso-ser-circle-7WA54U"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/icon-awesome-user-circle-3@1x.png"
+            />
+            <img
+              class="icon-aweso-ser-circle-1yDmei"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/icon-awesome-user-circle-3@1x.png"
+            />
+            <div class="mary font-class-1">MARY</div>
+            <div class="bill font-class-1">BILL</div>
+            <div class="kon font-class-1">KON</div>
+            <div class="mark font-class-1">MARK</div>
+          </div>
+          <div class="overlap-group4-C61RwL">
+            <div class="rectangle-50 border-class-1"></div>
+            <img
+              class="icon-material-group"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/icon-material-group@1x.png"
+            />
+            <div class="proceed-to-group-chat font-class-2" id="proceed">PROCEED TO GROUP CHAT</div>
+            <img id="proceed1"
+              class="icon-aweso-rcle-right"
+              src="https://anima-uploads.s3.amazonaws.com/projects/5fb6f1776de6a57467ec5761/releases/5fb6f1b9fee9226de8c71cc6/img/icon-awesome-arrow-circle-right@1x.png"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-6" id="mainColumn">
+
+          <!-- Column 2 Code Here -->
+          
+        </div>
+
+      </div> <!-- class="row" -->
+    </div> <!-- class="container" -->
+  </body>
+  <script>
+      
+      //Event Handlers
+      document.getElementById("btnBack").addEventListener("click", function(){
+        window.location.href = "createGroupName.html"
+      });
+      document.getElementById("btnHome").addEventListener("click", function(){
+        window.location.href = "MAIN.html"
+      });
+      document.getElementById("proceed").addEventListener("click", function(){
+        window.location.href = "groupChat.html"
+      });
+  </script>
+</html>

@@ -1,0 +1,455 @@
+.container{
+	
+	height: 700px;
+	width: 482px;
+	background-color: dimgray;
+}
+.nav{
+	background-color: black;
+	width: 482px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+  	justify-content: space-between;	
+}
+.nav-link{
+	color: white;
+}
+.nav-link:hover.backIcon{
+
+}
+#backIcon{
+	height: 30px;
+	width: 30px;
+}
+#homeIcon{
+	height: 30px;
+	width: 30px;
+}
+
+
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  box-sizing: border-box;
+}
+.border-class-1 {
+  border: 1px solid var(--dove-gray);
+}
+.create-group-1 {
+  align-items: center;
+  background-color: var(--gravel);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  min-height: 706px;
+  width: 482px;
+}
+.create-group-1 .add-to {
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  height: auto;
+  left: 265px;
+  line-height: 24px;
+  position: absolute;
+  text-align: left;
+  top: 15px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .group {
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  height: auto;
+  left: 267px;
+  line-height: 24px;
+  position: absolute;
+  text-align: left;
+  top: 40px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .back {
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  height: auto;
+  left: 47px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 11px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .bill {
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  height: auto;
+  left: 85px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 126px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .component-2-1 {
+  background-color: white;
+  border: 3px solid var(--gravel);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.create-group-1 .checkbox-1 {
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.create-group-1 .component-3-6 {
+  background-color: transparent;
+  height: 60px;
+  left: 335px;
+  position: absolute;
+  top: 18px;
+  width: 60px;
+}
+.create-group-1 .component-3-7 {
+  background-color: transparent;
+  height: 60px;
+  left: 335px;
+  position: absolute;
+  top: 302px;
+  width: 60px;
+}
+.create-group-1 .component-3-8 {
+  background-color: transparent;
+  height: 60px;
+  left: 335px;
+  position: absolute;
+  top: 202px;
+  width: 60px;
+}
+.create-group-1 .component-3-9 {
+  background-color: transparent;
+  height: 60px;
+  left: 335px;
+  position: absolute;
+  top: 110px;
+  width: 60px;
+}
+.create-group-1 .icon-aweso-rcle-right {
+  background-color: transparent;
+  height: 28px;
+  left: 245px;
+  position: absolute;
+  top: 43px;
+  width: 28px;
+}
+.create-group-1 .icon-aweso-ser-circle-1yDmei {
+  background-color: transparent;
+  height: 55px;
+  left: 19px;
+  position: absolute;
+  top: 112px;
+  width: 57px;
+}
+.create-group-1 .icon-aweso-ser-circle-7WA54U {
+  background-color: transparent;
+  height: 55px;
+  left: 19px;
+  position: absolute;
+  top: 207px;
+  width: 57px;
+}
+.create-group-1 .icon-aweso-ser-circle-OEJu1x {
+  background-color: transparent;
+  height: 55px;
+  left: 19px;
+  position: absolute;
+  top: 302px;
+  width: 57px;
+}
+.create-group-1 .icon-aweso-ser-circle-eSNWXa {
+  background-color: transparent;
+  height: 55px;
+  left: 19px;
+  position: absolute;
+  top: 18px;
+  width: 57px;
+}
+.create-group-1 .icon-awesome-check {
+  background-color: transparent;
+  height: 51px;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  width: calc(100.00% + 8px);
+}
+.create-group-1 .icon-awesome-search {
+  background-color: transparent;
+  height: 36px;
+  left: 24px;
+  position: absolute;
+  top: 12px;
+  width: 36px;
+}
+.create-group-1 .icon-ionic-round-back {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 11px;
+  width: 37px;
+}
+.create-group-1 .icon-material-group {
+  background-color: transparent;
+  height: 21px;
+  left: -6px;
+  position: absolute;
+  top: 46px;
+  width: 33px;
+}
+.create-group-1 .kon {
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  height: auto;
+  left: 88px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 220px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .line-3 {
+  background-color: transparent;
+  height: 82px;
+  left: 207px;
+  position: absolute;
+  top: 2px;
+  width: 2px;
+}
+.create-group-1 .mark {
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  height: auto;
+  left: 85px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 317px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .mary {
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  height: auto;
+  left: 85px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  top: 33px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .overlap-group-C61RwL {
+  background-color: transparent;
+  flex-shrink: 0;
+  height: 46px;
+  margin-right: 0.0px;
+  position: relative;
+  width: 482px;
+}
+.create-group-1 .overlap-group1-C61RwL {
+  background-color: transparent;
+  flex-shrink: 0;
+  height: 62px;
+  margin-top: 11px;
+  position: relative;
+  width: 482px;
+}
+.create-group-1 .overlap-group2-C61RwL {
+  background-color: transparent;
+  flex-shrink: 0;
+  height: 98px;
+  margin-left: 20.0px;
+  margin-top: 18px;
+  position: relative;
+  width: 428px;
+}
+.create-group-1 .overlap-group3-C61RwL {
+  background-color: transparent;
+  flex-shrink: 0;
+  height: 382px;
+  margin-left: 20.0px;
+  margin-top: 4px;
+  position: relative;
+  width: 428px;
+}
+.create-group-1 .overlap-group4-C61RwL {
+  background-color: transparent;
+  flex-shrink: 0;
+  height: 54px;
+  margin-left: 21.0px;
+  margin-top: 11px;
+  position: relative;
+  width: 279px;
+}
+.create-group-1 .participants {
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+  height: auto;
+  left: 14px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 27px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .path-13 {
+  background-color: transparent;
+  height: 46px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 125px;
+}
+.create-group-1 .path-14 {
+  background-color: transparent;
+  height: 46px;
+  left: 122px;
+  position: absolute;
+  top: 0px;
+  width: 360px;
+}
+.create-group-1 .path-29 {
+  background-color: transparent;
+  height: 84px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 428px;
+  /* border-style: solid;
+  border-color: gray; */
+}
+.create-group-1 .proceed-to-group-chat {
+  background-color: transparent;
+  height: auto;
+  left: 33px;
+  position: absolute;
+  text-align: left;
+  top: 50px;
+  white-space: nowrap;
+  width: auto;
+}
+.create-group-1 .proceed-to-group-chat:hover {
+  text-shadow: 2px 2px 4px white;
+}
+.create-group-1 .rectangle-35 {
+  background-color: white;
+  border-radius: 31px;
+  height: 62px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 482px;
+}
+.create-group-1 .rectangle-40 {
+  background-color: transparent;
+  height: 382px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 428px;
+}
+.create-group-1 .rectangle-41 {
+  background-color: transparent;
+  height: 71px;
+  left: 14px;
+  position: absolute;
+  top: 10px;
+  width: 396px;
+}
+.create-group-1 .rectangle-42 {
+  background-color: transparent;
+  height: 65px;
+  left: 14px;
+  position: absolute;
+  top: 300px;
+  width: 396px;
+}
+.create-group-1 .rectangle-43 {
+  background-color: transparent;
+  height: 71px;
+  left: 14px;
+  position: absolute;
+  top: 197px;
+  width: 396px;
+}
+.create-group-1 .rectangle-44 {
+  background-color: transparent;
+  height: 71px;
+  left: 14px;
+  position: absolute;
+  top: 104px;
+  width: 396px;
+}
+.create-group-1 .rectangle-50 {
+  background-color: transparent;
+  border-radius: 27px;
+  height: 54px;
+  left: -20px;
+  position: absolute;
+  top: 30px;
+  width: 310px;
+}
+.create-group-1 .search-in-contacts {
+  background-color: transparent;
+  color: black;
+  font-size: 30px;
+  height: auto;
+  left: 79px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 14px;
+  white-space: nowrap;
+  width: auto;
+}
+.font-class-1 {
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.font-class-2 {
+  color: white;
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+}
+:root {
+  --dove-gray: rgba(112,112,112,1.0);
+  --gravel: rgba(72,72,72,1.0);
+}
+#searchBar-1 {
+  left: 10px;
+  top: 20px;
+  width: 430px;
+}
