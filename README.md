@@ -11,5 +11,5 @@ The app was developed online in collaberation between five team members with the
 * Design - a group brainstorm of several designs for the app. There is a focus on extreme usability features to stretch the scope of our design biases.
 * Prototype - several low-fidelity google slide prototypes were designed, tested with users, re-designed and re-tested. 
 * Computer Prototyping - a higher fidelity Adobe XD prototype was designed and tested.
-* UI Development - a description of the final high-fidelity prototype meant to portray the final product in feel and scope. 
+* UI Development - a description of the final high-fidelity prototype meant to portray the final product's key features in feel and scope. 
 * User Testing - the final round of user testing and changes made to the app
