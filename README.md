@@ -1,7 +1,7 @@
 ## Chat-App
 This application was developed as a collaborative group project. The development focused on a user-centered design process with several prototype and user-testing stages.
 
-The app was developed online in collaberation between five team members with the work split through pages of the app. The final protoype included is a web app representation of a mobile app. I worked on the following files:
+The app was developed online in collaboration between five team members with the work split through pages of the app. The final protoype included is a web app representation of a mobile app. I worked on the following files:
 *  **createGroupName.css** &  **createGroupName.html** The page after clicking 'Create Group' button on the home page. Sets the new group's name first, then the privacy setting.
 *  **groupChat.html** The page after clicking 'Proceed to Group Chat' button on the join group page. Group chat where the user is encouraged to send a welcome message.
 
